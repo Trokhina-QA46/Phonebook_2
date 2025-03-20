@@ -14,6 +14,7 @@ public class CreateAccountTests extends TestBase{
         type(By.name("password"), "331Rita333$");
         //click on Registration button
         click(By.name("registration"));
+
         //verify SignOut button is displayed
         Assert.assertTrue(isElementPresent(By.xpath("//button[.='Sign Out']")));
     }

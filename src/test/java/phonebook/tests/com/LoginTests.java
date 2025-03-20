@@ -9,9 +9,9 @@ public class LoginTests extends TestBase{
     public void loginPositiveTests() {
         click(By.cssSelector("[href='/login']"));
         //enter email
-        type(By.name("email"), "rita38@gmail.com");
+        type(By.name("email"), "rita32@gmail.com");
         //enter password
-        type(By.name("password"), "321Rita323$");
+        type(By.name("password"), "323Rita323$");
         //click on Registration button
         click(By.name("registration"));
         //verify SignOut button is displayed
