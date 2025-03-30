@@ -1,22 +1,24 @@
 package phonebook.tests.com;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CreateAccountTests extends TestBase{
     @Test
     public void newUserRegistrationPositiveTest(){
-        click(By.cssSelector("[href='/login']"));
-        //enter email
-        type(By.name("email"), "rita15@gmail.com");
-        //enter password
-        type(By.name("password"), "331Rita333$");
-        //click on Registration button
-        click(By.name("registration"));
+       // click(By.cssSelector("[href='/login']"));
+       //type(By.name("email"), "rita15@gmail.com");
+       //type(By.name("password"), "331Rita343$");
+       //click on Registration button
+       //click(By.name("registration"));
+       //Assert.assertTrue(isElementPresent(By.xpath("//button[.='Sign Out']")));
+       //Assert.assertTrue(isAlertDisplayed());
 
-        //verify SignOut button is displayed
-        Assert.assertTrue(isElementPresent(By.xpath("//button[.='Sign Out']")));
+        clickOnLoginLink();
+        fillRegisterLoginForm(new UserDate().setMail("rita33@gmail.com").setPassword("323Rita323$"));
+        clickOnRegistrationButton();
+        Assert.assertTrue(isSignOutButtonPresent());
+
     }
 
 
