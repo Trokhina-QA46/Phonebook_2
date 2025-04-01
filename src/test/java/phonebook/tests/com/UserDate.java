@@ -8,8 +8,8 @@ public class UserDate {
         return mail;
     }
 
-    public UserDate setMail(String email) {
-        this.mail = email;
+    public UserDate setMail(String mail) {
+        this.mail = mail;
         return this;
     }
 

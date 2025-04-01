@@ -23,9 +23,14 @@ public class TestBase {
     }
 
 
-    @AfterMethod(enabled = false)
+    @AfterMethod //(enabled = false)
     public void tearDown() {
         driver.quit();
+    }
+
+
+    public boolean isHomeComponentPresent(){
+        return driver.findElements(By.cssSelector("div:nth-child(2)>div>div>h1")).size()>0;
     }
 
     public boolean isElementPresent(By locator) {
@@ -43,15 +48,15 @@ public class TestBase {
     public void click(By locator) {
         driver.findElement(locator).click();
     }
-    public boolean isAlertDisplayed(){
-        Alert alert = new WebDriverWait(driver, Duration.ofSeconds(20))
-                .until(ExpectedConditions.alertIsPresent());
-        if (alert == null) {
+   public boolean isAlertDisplayed(){
+      Alert alert = new WebDriverWait(driver, Duration.ofSeconds(20))
+             .until(ExpectedConditions.alertIsPresent());
+      if (alert == null) {
             return false;
-        } else {
-            return true;
-        }
-    }
+       } else {
+           return true;
+       }
+   }
 
     public void clickOnRegistrationButton() {
         click(By.name("registration"));
@@ -68,6 +73,10 @@ public class TestBase {
 
     public boolean isSignOutButtonPresent() {
         return isElementPresent(By.xpath("//button[.='Sign Out']"));
+    }
+
+    public void clickOnLoginButton() {
+        click(By.name("login"));
     }
 }
 
